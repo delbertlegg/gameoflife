@@ -5,6 +5,6 @@ package com.eddielegg.gameoflife;
  */
 public class GameCell {
     public boolean markedForDeath() {
-        return false;
+        return true;
     }
 }

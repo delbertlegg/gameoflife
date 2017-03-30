@@ -1,11 +1,11 @@
 package com.eddielegg.gameoflife;
 
-/**
- * Created by elegg on 3/29/17.
- */
-public abstract class GameCell {
+abstract class GameCell {
+    final int MIN_LIVE_NEIGHBORS = 2;
+    final int MAX_LIVE_NEIGHBORS = 3;
     GameGrid grid;
     CellStatus status;
+    Coordinates coords;
 
     public GameCell(GameGrid grid) {
         this.grid = grid;
@@ -13,8 +13,19 @@ public abstract class GameCell {
 
     public abstract boolean changingStatus();
 
-
+    public CellStatus getStatus() {
+        return status;
+    }
     public void setStatus(CellStatus status) {
         this.status = status;
+    }
+
+    public Coordinates getCoords() {
+        return coords;
+    }
+
+
+    public void setCoords(Coordinates coords) {
+        this.coords = coords;
     }
 }

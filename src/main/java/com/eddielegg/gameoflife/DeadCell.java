@@ -9,6 +9,6 @@ public class DeadCell extends GameCell {
     }
 
     public boolean changingStatus() {
-        return grid.aliveNeighbors(this) == 3;
+        return grid.aliveNeighbors(this) == MAX_LIVE_NEIGHBORS;
     }
 }

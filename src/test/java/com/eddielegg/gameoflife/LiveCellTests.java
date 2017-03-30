@@ -23,19 +23,19 @@ public class LiveCellTests {
     }
 
     @Test
-    public void cellIsMarkedForDeathWithLessThan2AliveNeighbors() {
+    public void cellIsMarkedForDeathWithLessThan2LiveNeighbors() {
         when(grid.aliveNeighbors(cell)).thenReturn(1);
         assertTrue(cell.changingStatus());
     }
 
     @Test
-    public void cellIsMarkedForDeathWithMoreThan3AliveNeighbors() {
+    public void cellIsMarkedForDeathWithMoreThan3LiveNeighbors() {
         when(grid.aliveNeighbors(cell)).thenReturn(4);
         assertTrue(cell.changingStatus());
     }
 
     @Test
-    public void cellIsNotMarkedForDeathWith3Neighbors() {
+    public void cellIsNotMarkedForDeathWith3LiveNeighbors() {
         when(grid.aliveNeighbors(cell)).thenReturn(3);
         assertFalse(cell.changingStatus());
     }

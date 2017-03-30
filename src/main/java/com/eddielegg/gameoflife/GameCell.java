@@ -3,23 +3,18 @@ package com.eddielegg.gameoflife;
 /**
  * Created by elegg on 3/29/17.
  */
-public class GameCell {
-    private GameGrid grid;
-    private CellStatus status;
+public abstract class GameCell {
+    GameGrid grid;
+    CellStatus status;
 
     public GameCell(GameGrid grid) {
         this.grid = grid;
     }
 
-    public boolean markedForDeath() {
-        return grid.aliveNeighbors(this) < 2 || grid.aliveNeighbors(this) > 3;
-    }
+    public abstract boolean changingStatus();
+
 
     public void setStatus(CellStatus status) {
         this.status = status;
-    }
-
-    public boolean markedForLife() {
-        return grid.aliveNeighbors(this) == 3;
     }
 }

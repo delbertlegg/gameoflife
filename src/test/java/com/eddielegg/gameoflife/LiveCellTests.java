@@ -18,26 +18,26 @@ public class LiveCellTests {
     @BeforeClass
     public static void setUpClass() {
         grid = Mockito.mock(GameGrid.class);
-        cell = new GameCell(grid);
+        cell = new LiveCell(grid);
         cell.setStatus(CellStatus.LIVE);
     }
 
     @Test
     public void cellIsMarkedForDeathWithLessThan2AliveNeighbors() {
         when(grid.aliveNeighbors(cell)).thenReturn(1);
-        assertTrue(cell.markedForDeath());
+        assertTrue(cell.changingStatus());
     }
 
     @Test
     public void cellIsMarkedForDeathWithMoreThan3AliveNeighbors() {
         when(grid.aliveNeighbors(cell)).thenReturn(4);
-        assertTrue(cell.markedForDeath());
+        assertTrue(cell.changingStatus());
     }
 
     @Test
     public void cellIsNotMarkedForDeathWith3Neighbors() {
         when(grid.aliveNeighbors(cell)).thenReturn(3);
-        assertFalse(cell.markedForDeath());
+        assertFalse(cell.changingStatus());
     }
 
 

@@ -1,7 +1,5 @@
 package com.eddielegg.gameoflife;
 
-import com.sun.xml.internal.fastinfoset.algorithm.DoubleEncodingAlgorithm;
-
 import java.util.Random;
 
 class GameGrid {

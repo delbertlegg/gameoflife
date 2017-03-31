@@ -8,9 +8,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by elegg on 3/29/17.
- */
 public class LiveCellTests {
     static GameCell cell;
     static GameGrid grid;

@@ -19,7 +19,6 @@ public class DeadCellTests {
     public static void setUpClass() {
         grid = Mockito.mock(GameGrid.class);
         cell = new DeadCell(grid);
-        cell.setStatus(CellStatus.DEAD);
     }
 
     @Test

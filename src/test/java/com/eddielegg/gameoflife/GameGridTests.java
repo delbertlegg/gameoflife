@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
 public class GameGridTests {
@@ -35,5 +36,15 @@ public class GameGridTests {
         assertEquals(8, grid.aliveNeighbors(cell));
     }
 
+    @Test
+    public void changeLiveCellToDeadCell() {
+        when(cell.getStatus()).thenReturn(CellStatus.LIVE);
+        assertTrue(grid.changeStatus(cell) instanceof DeadCell);
+    }
 
+    @Test
+    public void changeDeadCellToLiveCell() {
+        when(cell.getStatus()).thenReturn(CellStatus.DEAD);
+        assertTrue(grid.changeStatus(cell) instanceof LiveCell);
+    }
 }

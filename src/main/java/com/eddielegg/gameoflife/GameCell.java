@@ -16,9 +16,6 @@ abstract class GameCell {
     public CellStatus getStatus() {
         return status;
     }
-    public void setStatus(CellStatus status) {
-        this.status = status;
-    }
 
     public Coordinates getCoords() {
         return coords;

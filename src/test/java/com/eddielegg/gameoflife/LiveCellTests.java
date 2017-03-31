@@ -19,7 +19,6 @@ public class LiveCellTests {
     public static void setUpClass() {
         grid = Mockito.mock(GameGrid.class);
         cell = new LiveCell(grid);
-        cell.setStatus(CellStatus.LIVE);
     }
 
     @Test

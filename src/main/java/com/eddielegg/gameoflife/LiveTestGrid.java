@@ -1,5 +1,8 @@
 package com.eddielegg.gameoflife;
 
+/**
+ * Test fixture with all live cells to test grid functions
+ */
 public class LiveTestGrid extends GameGrid {
     public LiveTestGrid() {
         cellGrid = new GameCell[8][6];
